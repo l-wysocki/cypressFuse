@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^12.2.0",
+    "esbuild": "^0.16.10",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0"
+  }
+}
