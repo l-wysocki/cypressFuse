@@ -10,8 +10,16 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+
+  "plugins": ["cypress"],
   "rules": {
     "no-undef": 0,
-    "quotes": [2, "single", { "avoidEscape": true }]
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn",
+    "cypress/no-async-tests": "error",
+    "cypress/no-pause": "error"
   }
 }
