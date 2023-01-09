@@ -6,3 +6,4 @@ Feature: duckduckgo.com
     And The element '.badge-link__subtitle' does not contain any text
     And I scroll down by 500 pixels
     And I scroll up by 100 pixels
+    And I run Lighthouse reports with expected values: Performance: 20, accessibility: 20, best-practises: 20, seo: 20, pwa: 20
