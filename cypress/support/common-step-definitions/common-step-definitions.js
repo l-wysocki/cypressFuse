@@ -313,3 +313,20 @@ KEYBOARD
 defineStep('I press key {string}', (key) => {
   cy.get('body').type(key);
 });
+
+/*
+LIGHTHOUSE
+*/
+
+defineStep(
+  'I run Lighthouse reports with expected values: Performance: {int}, accessibility: {int}, best-practises: {int}, seo: {int}, pwa: {int}',
+  (performanceVal, accessibilityVal, bestpracisesVal, seoVal, pwaVal) => {
+    cy.lighthouse({
+      performance: performanceVal,
+      accessibility: accessibilityVal,
+      'best-practices': bestpracisesVal,
+      seo: seoVal,
+      pwa: pwaVal,
+    });
+  }
+);
