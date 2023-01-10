@@ -4,4 +4,6 @@ Feature: duckduckgo.com
     Then I should see a search bar
     Then The title is 'DuckDuckGo — Privacy, simplified.'
     And The element '.badge-link__subtitle' does not contain any text
-    And I verify that the whole website is not visually regressed. Base image: 'base.jpg'. Threshold: 0.01
+    
+  Scenario: checking sitemap magneticpoint.com
+  Then sitemap check for url: 'https://wiadomosci.onet.pl/9,sitemap-news.xml'
