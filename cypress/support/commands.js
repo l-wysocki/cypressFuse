@@ -51,3 +51,11 @@ Cypress.Commands.add('isInViewport', (element) => {
     expect(rect.bottom).not.to.be.greaterThan(bottom);
   });
 });
+
+// Visual regression
+const compareSnapshotCommand = require('cypress-image-diff-js/dist/command');
+compareSnapshotCommand();
+
+after(() => {
+  cy.task('generateReport');
+});

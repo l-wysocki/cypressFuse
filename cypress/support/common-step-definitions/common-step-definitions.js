@@ -157,6 +157,17 @@ defineStep(
   }
 );
 
+defineStep(
+  'I change the viewport width to {int} px and height to {int} px',
+  (width, height) => {
+    cy.viewport(width, height);
+  }
+);
+
+defineStep('I change the viewport with preset: {string}', (preset) => {
+  cy.viewport(preset);
+});
+
 /*
 FORMS
 */
@@ -330,3 +341,42 @@ defineStep(
     });
   }
 );
+
+/*
+COOKIES
+*/
+//TODO: Add cookies testing steps
+
+/*
+WAITING
+*/
+
+defineStep('I wait for {int} ms', (waitTime) => {
+  cy.wait(waitTime);
+});
+
+/*
+VISUAL REGRESSION
+*/
+
+defineStep(
+  'I verify that the whole website is not visually regressed. Base image: {string}. Threshold: {float}',
+  (imgName, thresholdLevel) => {
+    cy.compareSnapshot(imgName, thresholdLevel);
+  }
+);
+
+defineStep(
+  'I verify that element {string} is not visually regressed. Base image: {string}. Threshold: {float}',
+  (element, imgName, thresholdLevel) => {
+    cy.get(element).compareSnapshot(imgName, thresholdLevel);
+  }
+);
+
+defineStep('I am hidding element {string}', (element) => {
+  cy.get(element).hideElement();
+});
+
+defineStep('I am unhidding element {string}', (element) => {
+  cy.get(element).hideElement(false);
+});
