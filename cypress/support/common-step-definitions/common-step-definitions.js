@@ -1,5 +1,5 @@
 import '@4tw/cypress-drag-drop'
-
+const X2JS = require('x2js')
 const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
 
 /*
@@ -428,3 +428,26 @@ defineStep('I am hidding element {string}', (element) => {
 defineStep('I am unhidding element {string}', (element) => {
   cy.get(element).hideElement(false)
 })
+
+/*
+SITEMAP
+*/
+
+defineStep(
+  'I verify that all URLs in the sitemap are resolved with HTTP code 200. Sitemap URL: {string}',
+  (sitemapURL) => {
+    cy.request(sitemapURL)
+      .its('body')
+      .then((body) => {
+        const x2js = new X2JS()
+        const json = x2js.xml2js(body)
+        expect(json.urlset.url).to.be.an('array').and.have.length.gt(0)
+
+        json.urlset.url.forEach((url) => {
+          const parsed = new URL(url.loc)
+          cy.log(parsed.pathname)
+          cy.request('HEAD', url.loc).its('status').should('eq', 200)
+        })
+      })
+  }
+)
