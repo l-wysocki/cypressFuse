@@ -1,4 +1,5 @@
 import '@4tw/cypress-drag-drop'
+import { readLocator } from '../../pageObject/locators/locators'
 const X2JS = require('x2js')
 const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
 
@@ -63,43 +64,45 @@ HTML
 defineStep(
   'The attribute {string} of element {string} is the value {string}',
   (attribute, element, value) => {
-    cy.get(element).invoke('attr', attribute).should('eq', value)
+    cy.get(readLocator(element)).invoke('attr', attribute).should('eq', value)
   }
 )
 
 defineStep(
   'The attribute {string} of element {string} is not the value {string}',
   (attribute, element, value) => {
-    cy.get(element).invoke('attr', attribute).should('not.eql', value)
+    cy.get(readLocator(element))
+      .invoke('attr', attribute)
+      .should('not.eql', value)
   }
 )
 
 defineStep('The text of the {string} is equal to {string}', (element, text) => {
-  cy.get(element).should('have.text', text)
+  cy.get(readLocator(element)).should('have.text', text)
 })
 
 defineStep('The text of the {string} contain {string}', (element, text) => {
-  cy.get(element).should('include', text)
+  cy.get(readLocator(element)).should('include', text)
 })
 
 defineStep(
   'The text of the {string} does not contain {string}',
   (element, text) => {
-    cy.get(element).should('not.include', text)
+    cy.get(readLocator(element)).should('not.include', text)
   }
 )
 
 defineStep(
   'The css attribute {string} of element {string} is the value {string}',
   (attribute, element, value) => {
-    cy.get(element).should('have.css', attribute, value)
+    cy.get(readLocator(element)).should('have.css', attribute, value)
   }
 )
 
 defineStep(
   'The css attribute {string} of element {string} is not the value {string}',
   (attribute, element, value) => {
-    cy.get(element).should('not.have.css', attribute, value)
+    cy.get(readLocator(element)).should('not.have.css', attribute, value)
   }
 )
 
@@ -108,52 +111,52 @@ VISIBILITY
 */
 
 defineStep('The element {string} is displayed', (element) => {
-  cy.get(element).should('be.visible')
+  cy.get(readLocator(element)).should('be.visible')
 })
 
 defineStep('The element {string} is not displayed', (element) => {
-  cy.get(element).should('not.be.visible')
+  cy.get(readLocator(element)).should('not.be.visible')
 })
 
 defineStep(
   'I expect that element {string} appears exactly {int} times',
   (element, number) => {
-    cy.get(element).should('have.length', number)
+    cy.get(readLocator(element)).should('have.length', number)
   }
 )
 
 defineStep(
   'I expect that element {string} does not appear exactly {int} times',
   (element, number) => {
-    cy.get(element).should('not.have.length', number)
+    cy.get(readLocator(element)).should('not.have.length', number)
   }
 )
 
 defineStep(
   'I expect that element {string} becomes visible within {int} seconds',
   (element, number) => {
-    cy.get(element, { timeout: number }).should('be.visible')
+    cy.get(readLocator(element), { timeout: number }).should('be.visible')
   }
 )
 
 defineStep(
   'I expect that element {string} becomes invisible within {int} seconds',
   (element, number) => {
-    cy.get(element, { timeout: number }).should('not.be.visible')
+    cy.get(readLocator(element), { timeout: number }).should('not.be.visible')
   }
 )
 
 defineStep(
   'I expect that element {string} is within the viewport',
   (element) => {
-    cy.isInViewport(element)
+    cy.isInViewport(readLocator(element))
   }
 )
 
 defineStep(
   'I expect that element {string} is not within the viewport',
   (element) => {
-    cy.isNotInViewport(element)
+    cy.isNotInViewport(readLocator(element))
   }
 )
 
@@ -175,7 +178,7 @@ defineStep(
   'I expect that element {string} is not visible on {string} in {string} mode',
   (element, preset, screenOrientation) => {
     cy.viewport(preset, screenOrientation)
-    cy.get(element).should('not.be.visible')
+    cy.get(readLocator(element)).should('not.be.visible')
   }
 )
 
@@ -183,7 +186,7 @@ defineStep(
   'I expect that element {string} is visible on {string} in {string} mode',
   (element, preset, screenOrientation) => {
     cy.viewport(preset, screenOrientation)
-    cy.get(element).should('be.visible')
+    cy.get(readLocator(element)).should('be.visible')
   }
 )
 
@@ -192,31 +195,31 @@ FORMS
 */
 
 defineStep('The element {string} is enabled', (element) => {
-  cy.get(element).should('be.enabled')
+  cy.get(readLocator(element)).should('be.enabled')
 })
 
 defineStep('The element {string} is disabled', (element) => {
-  cy.get(element).should('be.disabled')
+  cy.get(readLocator(element)).should('be.disabled')
 })
 
 defineStep(
   'I select the option from element {string} by text {string}',
   (element, text) => {
-    cy.get(element).select(text).should('have.text', text)
+    cy.get(readLocator(element)).select(text).should('have.text', text)
   }
 )
 
 defineStep(
   'I select the option from element {string} by value {string}',
   (element, value) => {
-    cy.get(element).select(value).should('have.value', value)
+    cy.get(readLocator(element)).select(value).should('have.value', value)
   }
 )
 
 defineStep(
   'I select the option from element {string} by index {int}',
   (element, index) => {
-    cy.get(element).select(index)
+    cy.get(readLocator(element)).select(index)
   }
 )
 
@@ -225,30 +228,30 @@ INPUTS
 */
 
 defineStep('I add text {string} to field {string}', (text, element) => {
-  cy.get(element).type(text)
+  cy.get(readLocator(element)).type(text)
 })
 
 defineStep('I clear the text from field {string}', (element) => {
-  cy.get(element).clear()
+  cy.get(readLocator(element)).clear()
 })
 
 defineStep('The element {string} text is {string}', (element, text) => {
-  cy.get(element).contains(text)
+  cy.get(readLocator(element)).contains(text)
 })
 
 defineStep('The element {string} contain any text', (element) => {
-  cy.get(element).contains(/[\s\S]*/)
+  cy.get(readLocator(element)).contains(/[\s\S]*/)
 })
 
 defineStep(
   'The element {string} does not contain text {string}',
   (element, text) => {
-    cy.get(element).should('not.include', text)
+    cy.get(readLocator(element)).should('not.include', text)
   }
 )
 
 defineStep('The element {string} does not contain any text', (element) => {
-  cy.get(element).should('not.match', /(.*?)/)
+  cy.get(readLocator(element)).should('not.match', /(.*?)/)
 })
 
 /*
@@ -261,38 +264,38 @@ CLICKS & INTERACTIONS
 */
 
 defineStep('I click on element {string}', (element) => {
-  cy.get(element).click()
+  cy.get(readLocator(element)).click()
 })
 
 defineStep(
   'I click on element {string} in the exact position: {string}',
   (element, position) => {
-    cy.get(element).click(position)
+    cy.get(readLocator(element)).click(position)
   }
 )
 
 defineStep('I double click on element {string}', (element) => {
-  cy.get(element).dblclick()
+  cy.get(readLocator(element)).dblclick()
 })
 
 defineStep(
   'I double click on element {string} in the exact position: {string}',
   (element, position) => {
-    cy.get(element).dblclick(position)
+    cy.get(readLocator(element)).dblclick(position)
   }
 )
 
 defineStep(
   'I drag element {string} to another element {string}',
   (sourceElement, targetElement) => {
-    cy.get(sourceElement).drag(targetElement)
+    cy.get(readLocator(sourceElement)).drag(readLocator(targetElement))
   }
 )
 
 defineStep(
   'I drag element {string} by offset X: {float} and Y: {float}',
   (element, offsetX, offsetY) => {
-    cy.get(element).move({ deltaX: offsetX, deltaY: offsetY })
+    cy.get(readLocator(element)).move({ deltaX: offsetX, deltaY: offsetY })
   }
 )
 
@@ -309,15 +312,15 @@ defineStep('I scroll to the center of the website', () => {
 })
 
 defineStep('I scroll to the top of the element {string}', (element) => {
-  cy.get(element).scrollTo('top')
+  cy.get(readLocator(element)).scrollTo('top')
 })
 
 defineStep('I scroll to the bottom of the element {string}', (element) => {
-  cy.get(element).scrollTo('bottom')
+  cy.get(readLocator(element)).scrollTo('bottom')
 })
 
 defineStep('I scroll to the center of the element {string}', (element) => {
-  cy.get(element).scrollTo('center')
+  cy.get(readLocator(element)).scrollTo('center')
 })
 
 defineStep('I scroll down by {int} pixels', (pixelNumber) => {
@@ -329,11 +332,11 @@ defineStep('I scroll up by {int} pixels', (pixelNumber) => {
 })
 
 defineStep('I hover over element {string}', (element) => {
-  cy.get(element).trigger('mouseover')
+  cy.get(readLocator(element)).trigger('mouseover')
 })
 
 defineStep('I hover over element {string} and click on it', (element) => {
-  cy.get(element).trigger('mouseover').click()
+  cy.get(readLocator(element)).trigger('mouseover').click()
 })
 
 /*
@@ -417,16 +420,16 @@ defineStep(
 defineStep(
   'I verify that element {string} is not visually regressed. Base image: {string}. Threshold: {float}',
   (element, imgName, thresholdLevel) => {
-    cy.get(element).compareSnapshot(imgName, thresholdLevel)
+    cy.get(readLocator(element)).compareSnapshot(imgName, thresholdLevel)
   }
 )
 
 defineStep('I am hidding element {string}', (element) => {
-  cy.get(element).hideElement()
+  cy.get(readLocator(element)).hideElement()
 })
 
 defineStep('I am unhidding element {string}', (element) => {
-  cy.get(element).hideElement(false)
+  cy.get(readLocator(element)).hideElement(false)
 })
 
 /*
