@@ -57,6 +57,18 @@ defineStep('The page URL does not contain {string}', (url) => {
   cy.url().should('not.include', url)
 })
 
+defineStep('I verify thattitle length is equal to {int}', (titleLen) => {
+  cy.title().its('length').should('eq', titleLen)
+})
+
+defineStep('I verify thattitle length is less than {int}', (titleLen) => {
+  cy.title().its('length').should('be.lessThan', titleLen)
+})
+
+defineStep('I verify thattitle length is greater than {int}', (titleLen) => {
+  cy.title().its('length').should('be.greaterThan', titleLen)
+})
+
 /*
 HTML
 */
@@ -103,6 +115,27 @@ defineStep(
   'The css attribute {string} of element {string} is not the value {string}',
   (attribute, element, value) => {
     cy.get(readLocator(element)).should('not.have.css', attribute, value)
+  }
+)
+
+defineStep(
+  'I verify that element {string} have property {string} with value equal to {string}',
+  (element, prop, propVal) => {
+    cy.get(readLocator(element)).its(prop).should('eql', propVal)
+  }
+)
+
+defineStep(
+  'I verify that element {string} have property {string} with value equal to {int}',
+  (element, prop, propVal) => {
+    cy.get(readLocator(element)).its(prop).should('eql', propVal)
+  }
+)
+
+defineStep(
+  'I verify that element {string} have property {string} with value should be greater than {int}',
+  (element, prop, propVal) => {
+    cy.get(readLocator(element)).its(prop).should('be.gt', propVal)
   }
 )
 
@@ -255,11 +288,6 @@ defineStep('The element {string} does not contain any text', (element) => {
 })
 
 /*
-ALERTS
-*/
-//TODO: alert handling
-
-/*
 CLICKS & INTERACTIONS
 */
 
@@ -398,6 +426,22 @@ defineStep(
   }
 )
 
+defineStep('There are {int} cookies', (cookiesNum) => {
+  cy.getAllCookies.should('have.length', cookiesNum)
+})
+
+/*
+LOCAL & SESSION STORAGE
+*/
+
+defineStep('I want to clear the loal storage', () => {
+  cy.clearLocalStorage()
+})
+
+defineStep('I want to clear the session storage', () => {
+  cy.clearAllSessionStorage()
+})
+
 /*
 WAITING
 */
@@ -452,5 +496,40 @@ defineStep(
           cy.request('HEAD', url.loc).its('status').should('eq', 200)
         })
       })
+  }
+)
+
+/*
+API TESTING
+*/
+
+defineStep(
+  'I send request with method {string} to URL: {string}. I expect status to be {int}',
+  (requestMethod, requestURL, statusCode) => {
+    cy.request({
+      method: requestMethod.toUpperCase(),
+      url: requestURL,
+    }).then((resp) => {
+      expect(resp.status).to.eq(statusCode)
+    })
+  }
+)
+
+/*
+SCREENSHOT
+*/
+
+defineStep('I want to take a screenshot of currect state', () =>
+  cy.screenshot()
+)
+
+defineStep('I want to take a full page screenshot of current state', () =>
+  cy.screenshot('fullPage')
+)
+
+defineStep(
+  'I want to take a screenshot of the first element {string}',
+  (element) => {
+    cy.get(readLocator(element)).first().screenshot()
   }
 )
