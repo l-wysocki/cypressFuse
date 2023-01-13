@@ -61,7 +61,7 @@ npx cypress run
 
 ## Documentation
 
-For more detailed documentation please visit [documentation directory](https://linktodocumentation) in this repository
+For more detailed documentation please visit [documentation directory](/docs/) in this repository
 
 ## License
 

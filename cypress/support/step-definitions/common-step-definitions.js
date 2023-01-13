@@ -4,20 +4,6 @@ const X2JS = require('x2js')
 const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
 
 /*
-DUCKDUCK
-*/
-
-defineStep('I should see a search bar', () => {
-  cy.get('input').should(
-    'have.attr',
-    'placeholder',
-    'Search the web without being tracked'
-  )
-
-  assert.deepEqual({}, {})
-})
-
-/*
   PAGE & URL
 */
 
