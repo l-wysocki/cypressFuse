@@ -20,7 +20,7 @@ const duckduckgoHomepage = {
 Below there is initalized empty object that is listing every object created in above step.
 
 ```javascript
-const locatorPages = {}
+const locatorPages = { duckduckgoHomepage }
 ```
 
 Important thing is to not to change the name of this object. It should stay named `locatorPages`.
