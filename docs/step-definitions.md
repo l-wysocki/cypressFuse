@@ -32,6 +32,8 @@ The best practice for this is to create a new file:
 /cypress/support/step-definitions/custom-step-definitions.js
 ```
 
+Every `*.js` file in [/cypress/support/step-definitions/](/cypress/support/step-definitions/) folder will be considered as a file with defined step definitions.
+
 At the top of the file import `defineStep`:
 
 ```javascript
