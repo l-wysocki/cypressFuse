@@ -26,7 +26,6 @@
 
 //Lighthouse & Pa11y
 import '@cypress-audit/lighthouse/commands'
-import '@cypress-audit/pa11y/commands'
 
 Cypress.Commands.add('isNotInViewport', (element) => {
   cy.get(element).then(($el) => {

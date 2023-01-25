@@ -21,7 +21,7 @@ In addition to the above, the project also features:
 
 ## Requirements
 
-- NodeJS v16.16.0 or above
+- NodeJS v18.0 or above
 - Node Package Manager (NPM) v7.10.0 or above
 - Python v3.7 or above
 

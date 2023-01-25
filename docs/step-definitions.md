@@ -2,7 +2,7 @@
 
 ## Pre-built step definitions
 
-All of the pre-built step definitions are stored in [/cypress/support/step-definitions/common-step-definitions.js](/cypress/support/step-definitions/common-step-definitions.js).
+All of the pre-built step definitions are stored in [/cypress/support/step-definitions/](/cypress/support/step-definitions/).
 
 Steps are defined with _defineStep_. This solution is applied because it helps user to use the same step with different Gherkin step keywords (`Given, When, And, Then, But`).
 

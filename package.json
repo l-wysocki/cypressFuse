@@ -1,11 +1,25 @@
 {
+  "name": "cypress-cucumber-template",
+  "version": "0.8.0",
+  "description": "Cypress & Cucumber testing template with pre-defined steps. Visual, sitemap, performance, API testing included.",
+  "author": "Lukasz Wysocki <kontakt@lukaszwysocki.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/l-wysocki/cypress-cucumber-template"
+  },
+  "keywords": [
+    "Cypress",
+    "Cucumber",
+    "Gherkin",
+    "Boilerplate"
+  ],
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.3",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@cypress-audit/lighthouse": "^1.3.1",
-    "@cypress-audit/pa11y": "^1.3.1",
     "browserstack-cypress-cli": "^1.19.2",
-    "cypress": "^12.3.0",
+    "cypress": "^12.4.0",
     "cypress-image-diff-js": "^1.23.0",
     "esbuild": "^0.16.10",
     "eslint": "^8.31.0",
@@ -26,6 +40,11 @@
   "scripts": {
     "lint": "npx eslint --fix",
     "cypress:open": "npx run cypress open",
+    "cypress:run": "npx cypress run --reporter mochawesome",
+    "cy:run:chrome": "npx cypress run --browser chrome",
+    "cy:run:electron": "npx cypress run --browser electron",
+    "cy:run:edge": "npx cypress run --browser edge",
+    "cy:run:firefox": "npx cypress run --browser firefox",
     "prettier": "npx prettier -w .",
     "delete:reports": "rm cypress/results/* || true"
   }
