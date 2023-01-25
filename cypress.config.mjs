@@ -1,17 +1,18 @@
-const { defineConfig } = require('cypress')
-const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
-const preprocessor = require('@badeball/cypress-cucumber-preprocessor')
-const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild')
-const { lighthouse, prepareAudit } = require('@cypress-audit/lighthouse')
-const { pa11y } = require('@cypress-audit/pa11y')
-const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin')
+// const { defineConfig } = require('cypress')
+// const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
+// const preprocessor = require('@badeball/cypress-cucumber-preprocessor')
+// const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild')
+// const { lighthouse, prepareAudit } = require('@cypress-audit/lighthouse')
+// const getCompareSnapshotsPlugin = require('cypress-image-diff-js/dist/plugin')
 
-// Get current date
-var today = new Date()
-var dd = String(today.getDate()).padStart(2, '0')
-var mm = String(today.getMonth() + 1).padStart(2, '0')
-var yyyy = today.getFullYear()
-today = dd + mm + yyyy
+import { defineConfig } from 'cypress'
+import createBundler from '@bahmutov/cypress-esbuild-preprocessor'
+import preprocessor from '@badeball/cypress-cucumber-preprocessor'
+import createEsbuildPlugin from '@badeball/cypress-cucumber-preprocessor/esbuild.js'
+import { lighthouse, prepareAudit } from '@cypress-audit/lighthouse'
+import getCompareSnapshotsPlugin from 'cypress-image-diff-js/dist/plugin.js'
+import pkg from './utils/config-helpers.js'
+const { getCurrentDate } = pkg
 
 async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
@@ -32,7 +33,6 @@ async function setupNodeEvents(on, config) {
 
   on('task', {
     lighthouse: lighthouse(),
-    pa11y: pa11y(console.log.bind(console)),
   })
 
   // Visual Regression
@@ -42,7 +42,7 @@ async function setupNodeEvents(on, config) {
   return config
 }
 
-module.exports = defineConfig({
+export default defineConfig({
   reporter: 'mochawesome',
   reporterOptions: {
     reportFilename: '[status]_[datetime]-[name]-report',
@@ -50,7 +50,7 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
-    reportDir: 'cypress/reports/' + today,
+    reportDir: 'cypress/reports/' + getCurrentDate(),
   },
   // viewport default size
   viewportWidth: 1920,
