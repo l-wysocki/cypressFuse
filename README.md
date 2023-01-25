@@ -30,13 +30,13 @@ In addition to the above, the project also features:
 Clone project repository:
 
 ```bash
-git clone git@github.com:l-wysocki/cypress-boilerplate.git
+git clone git@github.com:l-wysocki/cypress-cucumber-template.git
 ```
 
 Go to the project directory:
 
 ```bash
-cd cypress-boilerplate
+cd cypress-cucumber-template
 ```
 
 Install dependencies with npm:
