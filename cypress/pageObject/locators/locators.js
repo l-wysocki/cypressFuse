@@ -19,14 +19,14 @@
 // const locatorPages = {  }
 
 /*
- Funtion that checks if the locator passed in step is not empty.
+ Function that checks if the locator passed in step is not empty.
  It retrieves the DOM element from Objects above.
 */
 
 export function readLocator(element) {
-  locatorDivided = element.split('.')
-  let parent = locatorDivided[0]
-  let child = locatorDivided[1]
+  const locatorDivided = element.split('.')
+  const parent = locatorDivided[0]
+  const child = locatorDivided[1]
   if (parent && child) {
     return locatorPages[parent][child]
   }
