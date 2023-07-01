@@ -2,9 +2,9 @@
 
 Cypress & Cucumber testing template is using [mochawesome reporter](https://www.npmjs.com/package/mochawesome).
 
-Reported is configured in [cypress.config.js](../cypress.config.js) file:
+Reported is configured in [cypress.config.ts](../cypress.config.ts) file:
 
-```javascript
+```typescript
 reporter: 'mochawesome',
   reporterOptions: {
     reportFilename: '[status]_[datetime]-[name]-report',
