@@ -1,11 +1,12 @@
 # Cypress & Cucumber testing template
 
-[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
+[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/) ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
+
 
 This Cypress project is an end-to-end testing framework that utilizes Cucumber for writing test scenarios in a human-readable language. Test results are reported using the mochawesome reporter, which generates detailed and visually appealing reports. The project also includes pre-defined steps, which are reusable building blocks that can be used to create new test scenarios. Browserstack integration allows the tests to be run on a variety of different browsers and operating systems, ensuring maximum compatibility. Additionally, the project includes sitemap testing, which verifies that all pages on the website are accessible, and visual and lighthouse testing, which checks the website's visual design and performance.
 In addition to the above, the project also features:
 
-- ESLint integration for linting JavaScript code, helping to identify and fix code style and formatting issues
+- ESLint integration for linting TypeScript code, helping to identify and fix code style and formatting issues
 - Prettier integration for formatting code to adhere to a consistent style, based on the project's configuration
 - Esbuild integration, to speed up the build process and reduce bundle size
 - VSCode integration for linting, formatting and bundling features from within the editor, for developers to use efficiently.
@@ -18,6 +19,7 @@ In addition to the above, the project also features:
 - Prettier & ESLint integration
 - Esbuild integration
 - VSCode recommended settings
+- TypeScript configuration added
 
 ## Requirements
 
@@ -65,4 +67,4 @@ For more detailed documentation please visit [documentation directory](/docs/) i
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE.md)
