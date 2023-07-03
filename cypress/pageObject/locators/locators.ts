@@ -23,11 +23,13 @@
  It retrieves the DOM element from Objects above.
 */
 
+const locatorPages = {};
+
 export function readLocator(element) {
-  const locatorDivided = element.split('.')
-  const parent = locatorDivided[0]
-  const child = locatorDivided[1]
+  const locatorDivided = element.split(".");
+  const parent = locatorDivided[0];
+  const child = locatorDivided[1];
   if (parent && child) {
-    return locatorPages[parent][child]
+    return locatorPages[parent][child];
   }
 }

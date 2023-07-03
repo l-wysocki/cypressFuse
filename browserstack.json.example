@@ -51,7 +51,7 @@
     }
   ],
   "run_settings": {
-    "cypress_config_file": "./cypress.config.js",
+    "cypress_config_file": "./cypress.config.ts",
     "project_name": "project-name",
     "build_name": "build-name",
     "exclude": [],
