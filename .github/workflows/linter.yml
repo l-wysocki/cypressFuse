@@ -1,9 +1,6 @@
 name: Lint and Prettier
 
 on:
-  push:
-    branches-ignore:
-      - main  # Ignore the main branch to prevent duplicate runs
   pull_request:
     branches:
       - '*'  # Run on all branches for pull requests
