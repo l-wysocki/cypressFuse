@@ -1,4 +1,4 @@
-import "./commands";
+import './commands'
 
 declare global {
   namespace Cypress {
@@ -7,8 +7,8 @@ declare global {
        * Custom command to select DOM element by data-cy attribute.
        * @example cy.dataCy('greeting')
        */
-      isWithinViewport(): Chainable<JQuery<HTMLElement>>;
-      isOutsideViewport(): Chainable<JQuery<HTMLElement>>;
+      isWithinViewport(): Chainable<JQuery<HTMLElement>>
+      isOutsideViewport(): Chainable<JQuery<HTMLElement>>
     }
   }
 }

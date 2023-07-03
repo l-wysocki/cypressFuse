@@ -25,34 +25,34 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 //Lighthouse & Pa11y
-import "@cypress-audit/lighthouse/commands";
-import compareSnapshotCommand from "cypress-visual-regression/dist/command";
+import '@cypress-audit/lighthouse/commands'
+import compareSnapshotCommand from 'cypress-visual-regression/dist/command'
 
-Cypress.Commands.add("isWithinViewport", { prevSubject: true }, (subject) => {
-  const rect = subject[0].getBoundingClientRect();
+Cypress.Commands.add('isWithinViewport', { prevSubject: true }, (subject) => {
+  const rect = subject[0].getBoundingClientRect()
 
-  expect(rect.top).to.be.within(0, window.innerHeight);
-  expect(rect.right).to.be.within(0, window.innerWidth);
-  expect(rect.bottom).to.be.within(0, window.innerHeight);
-  expect(rect.left).to.be.within(0, window.innerWidth);
+  expect(rect.top).to.be.within(0, window.innerHeight)
+  expect(rect.right).to.be.within(0, window.innerWidth)
+  expect(rect.bottom).to.be.within(0, window.innerHeight)
+  expect(rect.left).to.be.within(0, window.innerWidth)
 
-  return subject;
-});
+  return subject
+})
 
-Cypress.Commands.add("isOutsideViewport", { prevSubject: true }, (subject) => {
-  const rect = subject[0].getBoundingClientRect();
+Cypress.Commands.add('isOutsideViewport', { prevSubject: true }, (subject) => {
+  const rect = subject[0].getBoundingClientRect()
 
-  expect(rect.top).not.to.be.within(0, window.innerHeight);
-  expect(rect.right).not.to.be.within(0, window.innerWidth);
-  expect(rect.bottom).not.to.be.within(0, window.innerHeight);
-  expect(rect.left).not.to.be.within(0, window.innerWidth);
+  expect(rect.top).not.to.be.within(0, window.innerHeight)
+  expect(rect.right).not.to.be.within(0, window.innerWidth)
+  expect(rect.bottom).not.to.be.within(0, window.innerHeight)
+  expect(rect.left).not.to.be.within(0, window.innerWidth)
 
-  return subject;
-});
+  return subject
+})
 
 // Visual regression
-compareSnapshotCommand();
+compareSnapshotCommand()
 
 after(() => {
-  cy.task("generateReport");
-});
+  cy.task('generateReport')
+})
