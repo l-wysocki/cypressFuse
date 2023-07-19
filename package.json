@@ -1,12 +1,15 @@
 {
   "name": "cypress-cucumber-template",
-  "version": "0.9.9",
+  "version": "0.9.9.1",
   "description": "Cypress & Cucumber testing template with pre-defined steps. Visual, sitemap, performance, API testing included.",
   "author": "Lukasz Wysocki <kontakt@lukaszwysocki.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/l-wysocki/cypress-cucumber-template.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "Cypress",
