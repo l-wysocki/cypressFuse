@@ -1,12 +1,13 @@
 import { expect } from 'chai'
 import fs from 'fs'
 import { version as cypressVersion } from 'cypress/package.json'
+import packageJson from 'package.json'
 import path from 'path'
 import cypress from 'cypress'
 
 const packageJsonPath = path.resolve(__dirname, '../package.json')
-const packageJsonData = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'))
-const expectedCypressVersion = packageJsonData.devDependencies.cypress.replace(
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'))
+const expectedCypressVersion = packageJson.devDependencies.cypress.replace(
   '^',
   ''
 )
