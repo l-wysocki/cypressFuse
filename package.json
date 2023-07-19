@@ -1,6 +1,6 @@
 {
   "name": "cypress-cucumber-template",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "Cypress & Cucumber testing template with pre-defined steps. Visual, sitemap, performance, API testing included.",
   "author": "Lukasz Wysocki <kontakt@lukaszwysocki.com>",
   "license": "MIT",
