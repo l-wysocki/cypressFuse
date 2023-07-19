@@ -40,7 +40,7 @@
   },
   "scripts": {
     "lint": "npx eslint --fix",
-    "cypress:open": "npx run cypress open",
+    "cypress:open": "npx cypress open",
     "cypress:run": "npx cypress run --reporter mochawesome",
     "cy:run:chrome": "npx cypress run --browser chrome",
     "cy:run:electron": "npx cypress run --browser electron",
