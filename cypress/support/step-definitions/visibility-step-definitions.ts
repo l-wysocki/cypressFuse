@@ -1,6 +1,6 @@
 import '@4tw/cypress-drag-drop'
 import { readLocator } from '../../pageObject/locators/locators'
-const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
+import { defineStep } from '@badeball/cypress-cucumber-preprocessor'
 
 /*
 VISIBILITY
@@ -39,20 +39,6 @@ defineStep(
   'I expect that element {string} becomes invisible within {int} seconds',
   (element: string, number: number) => {
     cy.get(readLocator(element), { timeout: number }).should('not.be.visible')
-  }
-)
-
-defineStep(
-  'I expect that element {string} is within the viewport',
-  (element: string) => {
-    cy.get(readLocator(element)).isWithinViewport()
-  }
-)
-
-defineStep(
-  'I expect that element {string} is not within the viewport',
-  (element: string) => {
-    cy.get(readLocator(element)).isOutsideViewport()
   }
 )
 

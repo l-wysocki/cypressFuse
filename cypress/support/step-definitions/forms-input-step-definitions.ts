@@ -1,6 +1,6 @@
 import '@4tw/cypress-drag-drop'
 import { readLocator } from '../../pageObject/locators/locators'
-const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
+import { defineStep } from '@badeball/cypress-cucumber-preprocessor'
 
 /*
 FORMS
@@ -17,14 +17,20 @@ defineStep('The element {string} is disabled', (element: string) => {
 defineStep(
   'I select the option from element {string} by text {string}',
   (element: string, text: string) => {
-    cy.get(readLocator(element)).select(text).should('have.text', text)
+    cy.get(readLocator(element)).then(($element) => {
+      cy.wrap($element).select(String(text))
+      cy.wrap($element).should('have.text', String(text))
+    })
   }
 )
 
 defineStep(
   'I select the option from element {string} by value {string}',
-  (element: string, value: string) => {
-    cy.get(readLocator(element)).select(value).should('have.value', value)
+  (element: string, value: string | number | boolean) => {
+    cy.get(readLocator(element)).then(($element) => {
+      cy.wrap($element).select(String(value))
+      cy.wrap($element).should('have.value', String(value))
+    })
   }
 )
 
@@ -39,17 +45,23 @@ defineStep(
   INPUTS
   */
 
-defineStep('I add text {string} to field {string}', (text, element) => {
-  cy.get(readLocator(element)).type(text)
-})
+defineStep(
+  'I add text {string} to field {string}',
+  (text: string, element: string) => {
+    cy.get(readLocator(element)).type(text)
+  }
+)
 
 defineStep('I clear the text from field {string}', (element: string) => {
   cy.get(readLocator(element)).clear()
 })
 
-defineStep('The element {string} text is {string}', (element, text) => {
-  cy.get(readLocator(element)).contains(text)
-})
+defineStep(
+  'The element {string} text is {string}',
+  (element: string, text: string) => {
+    cy.get(readLocator(element)).contains(text)
+  }
+)
 
 defineStep('The element {string} contain any text', (element: string) => {
   cy.get(readLocator(element)).contains(/[\s\S]*/)

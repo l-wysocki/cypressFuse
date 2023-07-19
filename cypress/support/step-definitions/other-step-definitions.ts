@@ -1,7 +1,13 @@
 import '@4tw/cypress-drag-drop'
-const X2JS = require('x2js')
-const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
-import { should } from 'chai'
+import X2JS from 'x2js'
+import { defineStep } from '@badeball/cypress-cucumber-preprocessor'
+
+interface SitemapUrlset {
+  url: {
+    loc: string
+    // Add any other properties that you expect in the 'url' object
+  }[]
+}
 
 /*
 COOKIES
@@ -72,10 +78,10 @@ defineStep(
       .its('body')
       .then((body) => {
         const x2js = new X2JS()
-        const json = x2js.xml2js(body)
-        expect(json.urlset.url).to.be.an('array').and.have.length.gt(0)
+        const json = x2js.xml2js(body) as SitemapUrlset // Cast the 'json' variable to the defined interface
+        expect(json.url).to.be.an('array').and.have.length.gt(0)
 
-        json.urlset.url.forEach((url) => {
+        json.url.forEach((url) => {
           const parsed = new URL(url.loc)
           cy.log(parsed.pathname)
           cy.request('HEAD', url.loc).its('status').should('eq', 200)

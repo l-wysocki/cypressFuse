@@ -1,6 +1,6 @@
 import '@4tw/cypress-drag-drop'
 import { readLocator } from '../../pageObject/locators/locators'
-const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
+import { defineStep } from '@badeball/cypress-cucumber-preprocessor'
 
 /*
 CLICKS & INTERACTIONS
@@ -87,7 +87,10 @@ defineStep('I hover over element {string}', (element: string) => {
 defineStep(
   'I hover over element {string} and click on it',
   (element: string) => {
-    cy.get(readLocator(element)).trigger('mouseover').click()
+    cy.get(readLocator(element)).then(($element) => {
+      cy.wrap($element).trigger('mouseover')
+      cy.wrap($element).click()
+    })
   }
 )
 
