@@ -1,6 +1,6 @@
 import '@4tw/cypress-drag-drop'
 import { readLocator } from '../../pageObject/locators/locators'
-const { defineStep } = require('@badeball/cypress-cucumber-preprocessor')
+import { defineStep } from '@badeball/cypress-cucumber-preprocessor'
 
 /*
   PAGE & URL

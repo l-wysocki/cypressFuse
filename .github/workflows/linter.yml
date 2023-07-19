@@ -3,7 +3,7 @@ name: Lint and Prettier
 on:
   pull_request:
     branches:
-      - '*'  # Run on all branches for pull requests
+      - '*' # Run on all branches for pull requests
 
 jobs:
   lint-prettier:

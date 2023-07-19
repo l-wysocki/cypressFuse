@@ -5,7 +5,8 @@
     "types": ["cypress", "node", "cypress-visual-regression"],
     "moduleResolution": "node16",
     "esModuleInterop": true,
-    "module": "Node16"
+    "module": "Node16",
+    "resolveJsonModule": true
   },
   "include": ["**/*.ts"]
 }
