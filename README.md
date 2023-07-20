@@ -1,6 +1,8 @@
 # Cypress & Cucumber testing template
 
-[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/) ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555)
+[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/) ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555) ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fl-wysocki%2Fcypress-cucumber-template%2Fmain%2Fpackage.json&query=%24.version&label=Version) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/l-wysocki/cypress-cucumber-template/linter.yml)
+
+
 
 This Cypress project is an end-to-end testing framework that utilizes Cucumber for writing test scenarios in a human-readable language. Test results are reported using the mochawesome reporter, which generates detailed and visually appealing reports. The project also includes pre-defined steps, which are reusable building blocks that can be used to create new test scenarios. Browserstack integration allows the tests to be run on a variety of different browsers and operating systems, ensuring maximum compatibility. Additionally, the project includes sitemap testing, which verifies that all pages on the website are accessible, and visual and lighthouse testing, which checks the website's visual design and performance.
 In addition to the above, the project also features:
@@ -51,13 +53,25 @@ npm install
 Open Cypress with UI:
 
 ```bash
-npx cypress open
+npm run cy:open
 ```
 
 Run Cypress headless:
 
 ```bash
-npx cypress run
+npm run cy:run
+```
+
+## Additional commands
+
+Lint your code:
+```bash
+npm run lint
+```
+
+Apply Prettier:
+```bash
+npm run  prettier
 ```
 
 ## Documentation
