@@ -1,0 +1,4 @@
+# CODEOWNERS file for MyGitHubRepo
+
+# Assigning individual owners for the whole repository
+*    @l-wysocki @lwysockiffw
