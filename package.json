@@ -1,13 +1,13 @@
 {
-  "name": "@l-wysocki/cypress-cucumber-template",
+  "name": "@l-wysocki/cypressFuse",
   "version": "1.0.0",
-  "description": "Cypress & Cucumber testing template with pre-defined steps. Visual, sitemap, performance, API testing included.",
+  "description": "Flexible Cypress Testing Template with Cucumber, Gherkin, TypeScript, Visual Regression, Sitemap, and API Testing - Empowering Test Automation for All",
   "author": "Lukasz Wysocki <kontakt@lukaszwysocki.com>",
   "license": "MIT",
-  "homepage": "https://github.com/l-wysocki/cypress-cucumber-template",
+  "homepage": "https://github.com/l-wysocki/cypressFuse",
   "repository": {
     "type": "git",
-    "url": "https://github.com/l-wysocki/cypress-cucumber-template.git"
+    "url": "https://github.com/l-wysocki/cypressFuse.git"
   },
   "keywords": [
     "Cypress",

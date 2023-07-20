@@ -17,11 +17,11 @@ defineStep('The title is {string}', (title) => {
 Can be used as:
 
 ```gherkin
-Given The title is 'Cypress & Cucumber testing template'
-And The title is 'Cypress & Cucumber testing template'
-Then The title is 'Cypress & Cucumber testing template'
-When The title is 'Cypress & Cucumber testing template'
-But The title is 'Cypress & Cucumber testing template'
+Given The title is 'CypressFuse'
+And The title is 'CypressFuse'
+Then The title is 'CypressFuse'
+When The title is 'CypressFuse'
+But The title is 'CypressFuse'
 ```
 
 ## Adding new custom step definitions

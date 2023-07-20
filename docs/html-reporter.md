@@ -1,6 +1,6 @@
 # HTML reporter
 
-Cypress & Cucumber testing template is using [mochawesome reporter](https://www.npmjs.com/package/mochawesome).
+CypressFuse is using [mochawesome reporter](https://www.npmjs.com/package/mochawesome).
 
 Reported is configured in [cypress.config.ts](../cypress.config.ts) file:
 

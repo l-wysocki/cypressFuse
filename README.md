@@ -1,6 +1,7 @@
-# Cypress & Cucumber testing template
+# CypressFuse
+### Flexible Cypress Testing Template with Cucumber, Gherkin, TypeScript, Visual Regression, Sitemap, and API Testing - Empowering Test Automation for All
 
-[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/) ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555) ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fl-wysocki%2Fcypress-cucumber-template%2Fmain%2Fpackage.json&query=%24.version&label=Version) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/l-wysocki/cypress-cucumber-template/linter.yml)
+[![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/) ![ts](https://badgen.net/badge/-/TypeScript?icon=typescript&label&labelColor=blue&color=555555) ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fl-wysocki%2FCypressFuse%2Fmain%2Fpackage.json&query=%24.version&label=Version) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/l-wysocki/CypressFuse/linter.yml)
 
 
 
@@ -33,13 +34,13 @@ In addition to the above, the project also features:
 Clone project repository:
 
 ```bash
-git clone git@github.com:l-wysocki/cypress-cucumber-template.git
+git clone git@github.com:l-wysocki/cypressFuse.git
 ```
 
 Go to the project directory:
 
 ```bash
-cd cypress-cucumber-template
+cd cypressFuse
 ```
 
 Install dependencies with npm:
