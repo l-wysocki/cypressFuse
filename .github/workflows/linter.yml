@@ -1,4 +1,4 @@
-name: Lint and Prettier
+name: Lint/Prettier/Build
 
 on:
   pull_request:
@@ -26,3 +26,6 @@ jobs:
 
       - name: Run prettier
         run: npm run prettier
+
+      - name: Build Cypress
+        run: npm test
