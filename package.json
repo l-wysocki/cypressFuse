@@ -27,7 +27,7 @@
     "chai": "^4.3.7",
     "cypress": "^12.17.2",
     "cypress-image-diff-js": "^1.23.0",
-    "esbuild": "^0.18.14",
+    "esbuild": "^0.19.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.0.0",
