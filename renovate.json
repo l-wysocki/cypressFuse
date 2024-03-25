@@ -6,7 +6,7 @@
   "prHourlyLimit": 4,
   "automerge": true,
   "autoApprove": true,
-  "schedule": "after 10pm on every Monday",
+  "schedule": ["after 10pm on every Saturday", "every weekend"],
   "timezone": "America/New_York",
   "labels": [
     "dependencies",
