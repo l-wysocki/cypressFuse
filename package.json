@@ -35,7 +35,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-prettier": "^5.1.2",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^6.4.0",
     "fs": "^0.0.1-security",
     "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",
