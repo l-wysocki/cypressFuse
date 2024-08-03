@@ -7,7 +7,7 @@
   "automerge": true,
   "autoApprove": true,
   "schedule": [
-    "every weekend"
+    "every month"
   ],
   "timezone": "America/New_York",
   "labels": [
