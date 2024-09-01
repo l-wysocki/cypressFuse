@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
-    "cypress-visual-regression": "^5.0.0"
+    "cypress-visual-regression": "^5.2.0"
   },
   "scripts": {
     "lint": "npx eslint --fix \"**/*.{ts,tsx,js}\"",
