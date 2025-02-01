@@ -45,7 +45,7 @@
     "x2js": "^3.4.4"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.0",
     "cypress-visual-regression": "^5.2.0"
   },
   "scripts": {
